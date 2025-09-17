@@ -34,45 +34,7 @@ const Home = () => {
     <div style={{ padding: '50px', height: '100%' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <Row gutter={[24, 24]} justify="center">
-          <Col xs={24} sm={12} md={6}>
-            <Card 
-              hoverable
-              onClick={() => navigate('/pomodoro')}
-              style={style.card(pomodoroHovered)}
-              onMouseEnter={() => setPomodoroHovered(true)}
-              onMouseLeave={() => setPomodoroHovered(false)}
-            >
-              <Space direction="vertical" size="large" style={{ width: '100%' }}>
-              <GiTomato fontSize={48} />
-                <Title level={3} style={{ marginBottom: 0 }}>
-                  Pomodoro Mode
-                </Title>
-                <Paragraph style={{ color: '#666' }}>
-                  Focus on your work with timed productivity sessions
-                </Paragraph>
-              </Space>
-            </Card>
-          </Col>
           
-          <Col xs={24} sm={12} md={6}>
-            <Card 
-              hoverable
-              onClick={() => navigate('/calendar')}
-              style={style.card(calendarHovered)}
-              onMouseEnter={() => setCalendarHovered(true)}
-              onMouseLeave={() => setCalendarHovered(false)}
-            >
-              <Space direction="vertical" size="large" style={{ width: '100%' }}>
-                <CalendarOutlined style={{ fontSize: 48, color: 'var(--ant-color-primary)' }} />
-                <Title level={3} style={{ marginBottom: 0 }}>
-                  Calendar Mode
-                </Title>
-                <Paragraph style={{ color: '#666' }}>
-                  Plan your sessions based on your schedule
-                </Paragraph>
-              </Space>
-            </Card>
-          </Col>
           
           <Col xs={24} sm={12} md={6}>
             <Card 

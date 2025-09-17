@@ -5,7 +5,7 @@ const { defaultAlgorithm } = theme;
 export const themeConfig = {
   algorithm: defaultAlgorithm,
   token: {
-    colorPrimary: '#722ed1',
+    colorPrimary: '#01A48F',
     colorPrimaryHover: '#9254de',
     colorPrimaryActive: '#531dab',
     
@@ -27,7 +27,7 @@ export const themeConfig = {
     colorSuccess: '#52c41a',
     colorWarning: '#faad14',
     colorError: '#ff4d4f',
-    colorInfo: '#722ed1', // Changed to match primary purple
+    colorInfo: '#01A48F', // Changed to match primary teal
     
     // Border radius
     borderRadius: 6,

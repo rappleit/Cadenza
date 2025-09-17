@@ -22,7 +22,7 @@ const Stretch = () => {
   const { incrementScore } = useScore();
   const { activeSession } = useSession();
   
-  // Check if user has completed 3/3 stretches
+  // Check if user has completed daily goal stretches
   useEffect(() => {
     const completedCount = getCompletedCount();
     

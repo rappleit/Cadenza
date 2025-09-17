@@ -72,17 +72,16 @@ const Header = ({ showBackButton = false, backButtonText = "Back to Home" }) => 
       height: 64
     }}>
       <Title level={4} style={{ margin: 0, color: '#ffffff', marginLeft: '10px' }}>
-        Deskercise.ai
+        Cadenza
       </Title>
-      
-      {getSessionDisplay()}
+
       
       <Tag 
         color="gold" 
         icon={<TrophyOutlined />}
         style={{ marginLeft: 16, fontSize: '12px', padding: '4px 8px' }}
       >
-        Score: {score}
+        Points: {score}
       </Tag>
       
       {showBackButton && !isHomePage && (

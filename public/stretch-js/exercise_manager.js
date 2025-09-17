@@ -103,12 +103,7 @@ const AVAILABLE_EXERCISES = {
         }
         return LATERAL_NECK_TILT_WORKFLOW;
     },
-    'neck_rotation': () => {
-        if (typeof NECK_ROTATION_WORKFLOW === 'undefined') {
-            throw new Error('NECK_ROTATION_WORKFLOW not loaded');
-        }
-        return NECK_ROTATION_WORKFLOW;
-    },
+
     'overhead_reach': () => {
         if (typeof OVERHEAD_REACH_WORKFLOW === 'undefined') {
             throw new Error('OVERHEAD_REACH_WORKFLOW not loaded');
@@ -126,12 +121,7 @@ const AVAILABLE_EXERCISES = {
         }
         return SHOULDER_ROLLS_WORKFLOW;
     },
-    'seated_side_bend': () => {
-        if (typeof SEATED_SIDE_BEND_WORKFLOW === 'undefined') {
-            throw new Error('SEATED_SIDE_BEND_WORKFLOW not loaded');
-        }
-        return SEATED_SIDE_BEND_WORKFLOW;
-    }
+
 };
 
 // Function to get exercise workflow by name

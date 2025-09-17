@@ -77,7 +77,7 @@ const Progress = () => {
             title="Work Duration"
             value={Math.round(workDuration / 60)}
             suffix="minutes"
-            valueStyle={{ color: '#722ed1' }}
+            valueStyle={{ color: '#01A48F' }}
           />
         </div>
       </Space>

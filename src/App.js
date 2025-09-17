@@ -28,7 +28,7 @@ function AppContent() {
         background: '#f5f5f5'
       }}>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Stretch />} />
           <Route path="/pomodoro" element={<Pomodoro />} />
           <Route path="/stretch" element={<Stretch />} />
           <Route path="/posture" element={<PosturePage />} />

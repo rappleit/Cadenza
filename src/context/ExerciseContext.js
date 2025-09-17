@@ -4,7 +4,7 @@ const ExerciseContext = createContext();
 
 export const ExerciseProvider = ({ children }) => {
   const [completedExercises, setCompletedExercises] = useState([]);
-  const [dailyGoal] = useState(3); // Fixed daily goal of 3 stretches
+  const [dailyGoal] = useState(5); // Fixed daily goal of 5 stretches
 
   const addCompletedExercise = (exerciseName) => {
     console.log('Adding completed exercise to context:', exerciseName);

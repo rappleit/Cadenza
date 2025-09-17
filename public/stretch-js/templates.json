@@ -66,19 +66,7 @@
     "benefit": "Lubricates shoulder joints and reduces stiffness."
   },
 
-  "seated_side_bend": {
-    "description": "Raise one arm overhead and lean torso sideways.",
-    "howToDo": [
-      "Left hand on chair, right arm overhead.",
-      "Lean torso left, stretching right side.",
-      "Keep opposite hip grounded.",
-      "Hold, then switch sides."
-    ],
-    "trackingMetric": "Coronal shoulder-hip-knee angle; hip vertical displacement.",
-    "matchRule": "side-bend angle ≥ 15° AND opposite hip lift < 5 px",
-    "holdSecs": 3,
-    "benefit": "Opens obliques and quadratus lumborum, easing lateral tightness."
-  },
+
 
   "seated_spinal_twist": {
     "description": "Twist torso, placing hand on chair back for leverage.",

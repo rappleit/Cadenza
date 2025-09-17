@@ -18,19 +18,6 @@ const QuickStretchesTab = ({ selectedExercise }) => {
         // Fallback exercise data in case iframe loading fails
         const fallbackExercises = [
           {
-            key: 'neck_rotation',
-            name: 'Neck Rotation',
-            description: 'Turn your head to look over one shoulder without moving your torso.',
-            difficulty: 'Easy',
-            duration: '9 sec',
-            instructions: [
-              'Sit tall with spine neutral, shoulders level',
-              'Slowly rotate your head to the right until you feel a stretch',
-              'Slowly rotate your head to the left until you feel a stretch'
-            ],
-            image: "/images/exercise1.png"
-          },
-          {
             key: 'lateral_neck_tilt',
             name: 'Lateral Neck Tilt', 
             description: 'Drop one ear toward the same-side shoulder while sitting tall.',
@@ -41,23 +28,7 @@ const QuickStretchesTab = ({ selectedExercise }) => {
               'Slowly tilt your head so your right ear approaches your right shoulder',
               'Slowly tilt your head so your left ear approaches your left shoulder'
             ],
-            image: "/images/exercise2.png"
-          },
-          {
-            key: 'seated_side_bend',
-            name: 'Seated Side Bend',
-            description: 'Raise one arm overhead and lean torso sideways to stretch the opposite side.',
-            difficulty: 'Intermediate',
-            duration: '18 sec',
-            instructions: [
-              'Sit tall with shoulders level and arms relaxed at your sides',
-              'Lift your left arm straight up overhead, keeping right arm down',
-              'Keeping left arm up, gently lean your torso to the right to stretch your left side',
-              'Slowly return to center and lower your left arm back to neutral',
-              'Now lift your right arm straight up overhead, keeping left arm down',
-              'Keeping right arm up, gently lean your torso to the left to stretch your right side'
-            ],
-            image: "/images/exercise3.png"
+            image: "/images/lateral_neck_tilt.png"
           },
           {
             key: 'overhead_reach',
@@ -69,7 +40,7 @@ const QuickStretchesTab = ({ selectedExercise }) => {
               'Sit upright with shoulders level and head straight',
               'Raise both arms overhead with fingers interlocked'
             ],
-            image: "/images/exercise1.png"
+            image: "/images/overhead_reach.png"
           },
           {
             key: 'thoracic_extension',
@@ -81,7 +52,7 @@ const QuickStretchesTab = ({ selectedExercise }) => {
               'Sit upright with shoulders level and head straight',
               'Place hands behind head and gently arch your upper back'
             ],
-            image: "/images/exercise2.png"
+            image: "/images/thoracic_extension.png"
           },
           {
             key: 'shoulder_rolls',
@@ -94,7 +65,7 @@ const QuickStretchesTab = ({ selectedExercise }) => {
               'Roll shoulders forward in a circular motion',
               'Roll shoulders backward in a circular motion'
             ],
-            image: "/images/exercise3.png"
+            image: "/images/shoulder_rolls.png"
           }
         ];
 
@@ -152,6 +123,22 @@ const QuickStretchesTab = ({ selectedExercise }) => {
                       return 'Advanced';
                     };
 
+                    // Map exercise keys to their corresponding images
+                    const getExerciseImage = (key) => {
+                      const imageMap = {
+                        'lateral_neck_tilt': '/images/lateral_neck_tilt.png',
+                        'overhead_reach': '/images/overhead_reach.png',
+                        'thoracic_extension': '/images/thoracic_extension.png',
+                        'shoulder_rolls': '/images/shoulder_rolls.png'
+                      };
+                      return imageMap[key] || '/images/exercise1.png'; // fallback to generic image
+                    };
+
+                    // Skip seated_side_bend exercise
+                    if (exerciseKey === 'seated_side_bend') {
+                      return;
+                    }
+
                     exerciseData.push({
                       key: exerciseKey,
                       name: workflow.name || 'Unknown Exercise',
@@ -161,7 +148,7 @@ const QuickStretchesTab = ({ selectedExercise }) => {
                       instructions: workflow.steps.map(step => step.instruction || 'No instruction available'),
                       holdDuration: workflow.holdDuration || 3000,
                       steps: workflow.steps,
-                      image: "/images/exercise1.png" // Default image for now
+                      image: getExerciseImage(exerciseKey)
                     });
                   } catch (error) {
                     console.warn(`Error loading exercise ${exerciseKey}:`, error);
